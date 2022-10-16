@@ -12,7 +12,7 @@ class Car extends VehicleModule.Vehicle{
         this.fuel = 10;
     }
     loadPassenger(number){
-        if(this.passenger + number < this.maximumPassangers){
+        if(this.passenger + number < this.maximumPassengers){
             this.availableRoom = true;
             this.passenger += number;
             return this.passenger;
@@ -34,15 +34,12 @@ class Car extends VehicleModule.Vehicle{
 }
 
 //this shows how to call from this module...
-let mercury = new Car('Mercury', 'A28 Sedan', '1965','Blue', 0);
+let mercury = new Car('Mercury', 'A28 Sedan', '1965','Blue', 50000);
 //let v = new VehicleModule.Vehicle("Mercury", "Sedan", "1965", "color", "mileage");
 //console.log(mercury);
 
-mercury.setNumberOfWheels(4);
-//mercury.loadPassenger(2);
-//console.log('There are ${this.passenger} passengers.');
-//mercury.loadPassenger(3);
-//console.log('There are ${this.passenger} passengers.','line 34');
 mercury.start();
+mercury.loadPassenger(5);
 mercury.scheduleServiceNow(mercury.mileage);
-console.log(mercury.timeForMaintenance);
+mercury.setNumberofWheels(4);
+console.log(mercury);
